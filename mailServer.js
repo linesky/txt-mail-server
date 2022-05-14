@@ -17,7 +17,7 @@ connection.on('error',onError);
 	function onData(data){
 		var v="";
 		vv=data.toString();
-		vv=vv.replace(";","\n",true);
+		vv=vv.replace(/;/g,"\n",true);
 		vv=connection.remoteAddress+" : " + vv;
 		console.log(vv);
 		connection.end("\n\rok\n\r");
